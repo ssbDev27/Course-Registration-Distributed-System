@@ -1,0 +1,18 @@
+module StudentAdvisorInterfaceModule
+{
+exception RemoteException {
+long RemoteExceptionString;
+};
+  interface StudentAdvisorInterface
+  {
+    string addCourse(in string CourseID,in string Semester,in long capacity) raises (RemoteException);
+	string removeCourse(in string CourseID, in string Semester) raises (RemoteException);
+	string listCourseAvailability(in string Semester,in string Department) raises (RemoteException);
+	string enrolCourse(in string studentID,in string CourseID,in string Semester) raises (RemoteException);
+	string getClassSchedule(in string studentID) raises (RemoteException);
+	string dropCourse(in string studentID, in string CourseID) raises (RemoteException);
+	string swapCourse(in string studentID, in string oldCourseID, in string newCourseID) raises (RemoteException);
+	//add(in long a,in long b);
+    //oneway void shutdown();
+    };
+};
